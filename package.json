@@ -1,6 +1,6 @@
 {
   "name": "synergy-ui-registry",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Synergy branded component registry for shadcn/ui",
   "private": true,
   "keywords": [
