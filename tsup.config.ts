@@ -12,7 +12,7 @@ export default defineConfig({
     },
   },
   clean: true,
-  external: ["tailwindcss"], // don't bundle peer deps
+  // external: ["tailwindcss"], // don't bundle peer deps
 
   // After build copy CSS theme assets to dist
   onSuccess: async () => {
