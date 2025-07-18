@@ -1,0 +1,54 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "synergy-gearbox-registry",
+  "version": "1.0.0",
+  "description": "Synergy branded components for Shadcn CLI",
+  "homepage": "http://localhost:3000",
+  "author": "Synergy Team",
+  "items": [
+    {
+      "name": "theme-default",
+      "type": "registry:theme",
+      "title": "Default Theme",
+      "description": "Synergy default theme with brand colors using oklch color space",
+      "files": [
+        {
+          "path": "src/themes/default.css",
+          "type": "registry:style",
+          "target": "app/globals.css"
+        }
+      ]
+    },
+    {
+      "name": "theme-cyberpunk",
+      "type": "registry:theme",
+      "title": "Cyberpunk Theme",
+      "description": "Cyberpunk theme with brand colors using oklch color space",
+      "files": [
+        {
+          "path": "src/themes/cyberpunk.css",
+          "type": "registry:style",
+          "target": "app/globals.css"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Displays a button or a component that looks like a button with Synergy styling",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}
