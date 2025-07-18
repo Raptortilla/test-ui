@@ -1,7 +1,7 @@
 {
-  "name": "synergy-ui-registry",
+  "name": "test-ui",
   "version": "0.4.0",
-  "description": "Synergy branded component registry for shadcn/ui",
+  "description": "Test UI package",
   "private": true,
   "keywords": [
     "shadcn",
