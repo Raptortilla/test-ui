@@ -1,4 +1,4 @@
-import { Button } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
 
-export { Button };
+export { Button, buttonVariants };
 export { cn } from "../lib/utils";
