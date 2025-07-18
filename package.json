@@ -23,7 +23,8 @@
       "types": "./dist/index.d.ts"
     },
     "./themes/default": "./dist/themes/default.css",
-    "./themes/cyberpunk": "./dist/themes/cyberpunk.css"
+    "./themes/cyberpunk": "./dist/themes/cyberpunk.css",
+    "./themes/retro-arcade": "./dist/themes/retro-arcade.css"
   },
   "files": [
     "dist"

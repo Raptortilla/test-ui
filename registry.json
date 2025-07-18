@@ -33,6 +33,19 @@
       ]
     },
     {
+      "name": "theme-retro-arcade",
+      "type": "registry:theme",
+      "title": "Retro Arcade Theme",
+      "description": "Retro arcade theme with brand colors using oklch color space",
+      "files": [
+        {
+          "path": "src/themes/retro-arcade.css",
+          "type": "registry:style",
+          "target": "app/globals.css"
+        }
+      ]
+    },
+    {
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
