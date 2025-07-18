@@ -1,7 +1,32 @@
 {
-  "name": "test-ui",
+  "name": "synergy-ui-registry",
   "version": "0.2.0",
+  "description": "Synergy branded component registry for shadcn/ui",
   "private": true,
+  "keywords": [
+    "shadcn",
+    "ui",
+    "components",
+    "registry",
+    "synergy",
+    "react",
+    "tailwind"
+  ],
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./themes/*": "./src/themes/*"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -10,18 +35,24 @@
     "registry:build": "mkdir -p public/r && shadcn build && npm run validate",
     "package:build": "pnpm tsup --config tsup.config.ts",
     "prepare": "pnpm package:build",
-    "validate": "node scripts/validate-registry.js"
+    "validate": "node scripts/validate-registry.js",
+    "prepublishOnly": "npm run package:build && npm run validate",
+    "publish:dry": "npm publish --dry-run",
+    "release": "npm version patch && npm publish"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.525.0",
-    "next": "15.4.1",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
     "tailwind-merge": "^3.3.1"
   },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0",
+    "tailwindcss": ">=3.0.0"
+  },
+  "peerDependenciesMeta": {},
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
