@@ -12,11 +12,11 @@ export default defineConfig({
     },
   },
   clean: true,
-  external: ["tailwindcss", "class-variance-authority"], // don't bundle peer deps
+  external: ["react", "react-dom", "tailwindcss", "postcss"],
 
   // After build copy CSS theme assets to dist
   onSuccess: async () => {
     // Copy theme CSS files to dist for package distribution
-    await cp("src/themes", "dist/themes", { recursive: true });
+    // await cp("src/themes", "dist/themes", { recursive: true });
   },
 });

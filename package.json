@@ -36,33 +36,35 @@
     "lint": "next lint",
     "registry:build": "mkdir -p public/r && shadcn build && npm run validate",
     "package:build": "pnpm tsup --config tsup.config.ts",
-    "prepare": "pnpm package:build",
+    "prepare": "pnpm package:build && pnpm tailwind:build",
     "validate": "node scripts/validate-registry.js",
     "prepublishOnly": "npm run package:build && npm run validate",
     "publish:dry": "npm publish --dry-run",
-    "release": "npm version patch && npm publish"
+    "release": "npm version patch && npm publish",
+    "tailwind:build": "npx tailwindcss -i ./src/themes/default.css -o ./dist/themes/default.css --minify --config tailwind_configs/tailwind.default.config.js"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.525.0",
-    "tailwind-merge": "^3.3.1",
-    "next": "15.4.1"
+    "next": "15.4.1",
+    "tailwind-merge": "^3.3.1"
   },
   "peerDependencies": {
-    "react": ">=18.0.0",
-    "react-dom": ">=18.0.0",
-    "tailwindcss": ">=3.0.0",
-    "clsx": "^2.1.1",
     "@radix-ui/react-slot": "^1.2.3",
     "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "lucide-react": "^0.525.0",
-    "tailwind-merge": "^3.3.1"
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": ">=3.0.0"
   },
   "peerDependenciesMeta": {},
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@tailwindcss/cli": "^4.1.11",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
