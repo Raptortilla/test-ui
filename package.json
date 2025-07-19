@@ -36,12 +36,12 @@
     "lint": "next lint",
     "registry:build": "mkdir -p public/r && shadcn build && npm run validate",
     "package:build": "pnpm tsup --config tsup.config.ts",
-    "prepare": "pnpm package:build && pnpm tailwind:build",
+    "prepare": "pnpm package:build",
     "validate": "node scripts/validate-registry.js",
     "prepublishOnly": "npm run package:build && npm run validate",
     "publish:dry": "npm publish --dry-run",
     "release": "npm version patch && npm publish",
-    "tailwind:build": "npx tailwindcss -i ./src/themes/default.css -o ./dist/themes/default.css --minify --config tailwind_configs/tailwind.default.config.js"
+    "themes:build": "node scripts/build-themes.js"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",

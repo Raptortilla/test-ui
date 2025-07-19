@@ -16,7 +16,12 @@ export default defineConfig({
 
   // After build copy CSS theme assets to dist
   onSuccess: async () => {
-    // Copy theme CSS files to dist for package distribution
-    // await cp("src/themes", "dist/themes", { recursive: true });
+    const { execSync } = await import("child_process");
+
+    // Build all themes using Tailwind CSS
+    console.log("Building themes...");
+    execSync("npm run themes:build", { stdio: "inherit" });
+
+    console.log("All themes built successfully!");
   },
 });
